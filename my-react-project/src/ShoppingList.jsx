@@ -12,21 +12,17 @@ function ShoppingList() {
   };
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '30px' }}>
-      <h2>Shopping List</h2>
+    <div>
       <input
         type="text"
-        placeholder="Add an item"
         value={item}
         onChange={(e) => setItem(e.target.value)}
+        placeholder="Add item"
       />
-      <button onClick={addItem} style={{ marginLeft: '10px' }}>
-        Add
-      </button>
-
-      <ul style={{ listStyle: 'none', padding: 0, marginTop: '20px' }}>
-        {list.map((product, index) => (
-          <li key={index}>{product}</li>
+      <button onClick={addItem}>Add</button>
+      <ul>
+        {list.map((i, index) => (
+          <li key={index}>{i}</li>
         ))}
       </ul>
     </div>

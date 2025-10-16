@@ -1,5 +1,5 @@
-function Welcome({ props }) {
-  return <h1>Welcome, {props.name} !</h1>;
+function Welcome({ name }) {
+  return <h2>Welcome, {name}!</h2>;
 }
 
 export default Welcome;
