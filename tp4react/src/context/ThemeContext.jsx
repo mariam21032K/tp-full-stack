@@ -13,7 +13,7 @@ export function ThemeProvider({ children }) {
         style={{
           backgroundColor: theme === 'light' ? '#f0f0f0' : '#222',
           color: theme === 'light' ? '#000' : '#fff',
-          minHeight: '100vh',
+          minHeight: '10vh',
           transition: '0.3s',
         }}
       >

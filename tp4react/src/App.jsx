@@ -3,7 +3,7 @@ import Time from './Components/Time';
 import ThemeApp from './Components/ThemeApp';
 import { UserProvider } from './context/UserContext';
 import { useContext, useState, useEffect } from 'react';
-
+import UserList from "./UserList";
 
 function UserProfile() {
   const { user, toggleConnection } = useContext(UserContext);
@@ -69,7 +69,7 @@ import { UserContext } from './context/UserContext';
 function App() {
   return (
     <div style={{ fontFamily: 'Arial', padding: 20 }}>
-      <h1>TP React Hooks — useState / useEffect / useContext</h1>
+      <h1>TP 4 React Hooks </h1>
 
       {/* ==== Exercice 1 ==== */}
       <h2>Exercice 1 – Heure actuelle</h2>
@@ -82,6 +82,11 @@ function App() {
       <ThemeApp />
 
       <hr />
+      {/* ==== Exercice 3 ==== */}
+      
+            <h2>Exercice 3 - Appel API avec useEffect</h2>
+            <UserList />
+          
 
       {/* ==== TP Complet ==== */}
       <UserProvider>

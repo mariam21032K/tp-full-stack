@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider, useTheme } from '../context/ThemeContext';
 
-// Bouton pour changer le thème
+
 function ToggleThemeButton() {
   const { theme, toggleTheme } = useTheme();
 
