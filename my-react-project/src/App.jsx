@@ -8,47 +8,26 @@ import Counter from './Counter';
 import Form from './Form';
 import ShoppingList from './ShoppingList';
 
-// Création du contexte
-const ThemeContext = createContext();
 
-//  Provider du contexte
-function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('light');
-  return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
-}
-
-//Bouton qui consomme le contexte
-function ToggleThemeButton() {
-  const { theme, setTheme } = useContext(ThemeContext);
-  return (
-    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-      Thème actuel : {theme}
-    </button>
-  );
-}
-
-// Composant principal
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    // On englobe tout dans ThemeProvider pour partager le contexte
-    <ThemeProvider>
+    <>
+      {/* Logos and links section */}
       <div>
-        <a href="https://vite.dev" target="_blank">
+        <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
-        <a href="https://react.dev" target="_blank">
+        <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
 
+      {/* Title */}
       <h1>Vite + React</h1>
 
+      {/* Counter section */}
       <div className="card">
         <button onClick={() => setCount(count + 1)}>
           count is {count}
@@ -58,19 +37,17 @@ function App() {
         </p>
       </div>
 
+      {/* Documentation link */}
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
 
-      {/* Tes autres composants */}
+      {/* Custom Components */}
       <Welcome name="Mariam" />
       <Counter />
       <Form />
       <ShoppingList />
-
-      {/* Ajout du bouton pour changer le thème */}
-      <ToggleThemeButton />
-    </ThemeProvider>
+    </>
   );
 }
 
